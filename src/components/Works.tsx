@@ -1,6 +1,6 @@
 import { Box, Card, CardHeader, CardBody, Heading, Stack, StackDivider, Text, HStack, Tag, Center } from '@chakra-ui/react'
 
-export const Work = () => {
+export const Works = () => {
   const skillsQiita = ['Ruby', 'TypeScript', 'React', 'Ruby on Rails', 'Docker']
   const skillsSalesGram = ['PHP', 'JavaScript', 'Codeigniter', 'Vue.js', 'PostgreSQL', 'AWS']
   const skillsNgWordCheck = ['PHP', 'JavaScript', 'jQuery', 'Codeigniter']
@@ -8,7 +8,7 @@ export const Work = () => {
   return (
     <Card>
       <CardHeader>
-        <Heading size='md'>Work</Heading>
+        <Heading size='md'>Works</Heading>
       </CardHeader>
 
       <CardBody>

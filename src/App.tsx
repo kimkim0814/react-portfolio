@@ -1,33 +1,42 @@
-import * as React from "react"
 import {
-  ChakraProvider, Tabs, TabList, TabPanels, Tab, TabPanel, theme,
+  ChakraProvider,
+  Tab,
+  TabList,
+  Tabs,
+  theme,
 } from "@chakra-ui/react"
-import { About } from "./components/About"
 import { css } from "@emotion/react"
+import { About } from "./components/About"
 import { Skills } from "./components/Skills"
-import { Work } from "./components/Work"
+import { Works } from "./components/Works"
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+
+const pathname = location.pathname;
+const tabsIndex = pathname?.split('/')[1] === 'Skills' ? 1 : pathname?.split('/')[1] === 'Works' ? 2 : 0
 
 export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Tabs align="center" size="lg" >
-      <TabList >
-        <Tab css={tabStyle}>About</Tab>
-        <Tab css={tabStyle}>Skills</Tab>
-        <Tab css={tabStyle}>Work</Tab>
-      </TabList>
-      <TabPanels>
-        <TabPanel>
-          <About />
-        </TabPanel>
-        <TabPanel>
-          <Skills />
-        </TabPanel>
-        <TabPanel>
-          <Work />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
-  </ChakraProvider>
+  <BrowserRouter>
+    <ChakraProvider theme={theme}>
+      <Tabs align="center" size="lg" defaultIndex={tabsIndex}>
+        <TabList mb={4}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <Tab css={tabStyle}>About</Tab>
+          </Link>
+          <Link to="Skills" style={{ textDecoration: 'none' }}>
+            <Tab css={tabStyle}>Skills</Tab>
+          </Link>
+          <Link to="Works" style={{ textDecoration: 'none' }}>
+            <Tab css={tabStyle}>Works</Tab>
+          </Link>
+        </TabList>
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="Skills" element={<Skills />} />
+          <Route path="Works" element={<Works />} />
+        </Routes>
+      </Tabs>
+    </ChakraProvider>
+  </BrowserRouter >
 )
 
 const tabStyle = css({
