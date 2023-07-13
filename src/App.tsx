@@ -11,10 +11,13 @@ import { Skills } from "./components/Skills"
 import { Works } from "./components/Works"
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 
+const pathname = location.pathname;
+const tabsIndex = pathname?.split('/')[1] === 'Skills' ? 1 : pathname?.split('/')[1] === 'Works' ? 2 : 0
+
 export const App = () => (
   <BrowserRouter>
     <ChakraProvider theme={theme}>
-      <Tabs align="center" size="lg" >
+      <Tabs align="center" size="lg" defaultIndex={tabsIndex}>
         <TabList mb={4}>
           <Link to="/" style={{ textDecoration: 'none' }}>
             <Tab css={tabStyle}>About</Tab>
