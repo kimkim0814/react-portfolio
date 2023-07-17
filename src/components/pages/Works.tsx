@@ -1,9 +1,10 @@
 import { Box, Card, CardHeader, CardBody, Heading, Stack, StackDivider, Text, HStack, Tag, Center } from '@chakra-ui/react'
+import { SkillTags } from '../Items/SkillTags'
 
 export const Works = () => {
   const skillsQiita = ['Ruby', 'TypeScript', 'React', 'Ruby on Rails', 'Docker']
   const skillsSalesGram = ['PHP', 'JavaScript', 'Codeigniter', 'Vue.js', 'PostgreSQL', 'AWS']
-  const skillsNgWordCheck = ['PHP', 'JavaScript', 'jQuery', 'Codeigniter']
+  const skillsNgWordCheckAndAddressCheck = ['PHP', 'JavaScript', 'jQuery', 'Codeigniter']
 
   return (
     <Card>
@@ -21,13 +22,7 @@ export const Works = () => {
               エンジニアに関する知識を記録・共有するためのサービス「Qiita」の開発・運用
             </Text>
             <Center mt='1'>
-              <HStack spacing='2' >
-                {skillsQiita.map((skill) => (
-                  <Tag size='sm' key={skill} variant='solid' colorScheme='teal'>
-                    {skill}
-                  </Tag>
-                ))}
-              </HStack>
+              <SkillTags skills={skillsQiita} />
             </Center>
           </Box>
           <Box>
@@ -38,25 +33,19 @@ export const Works = () => {
               請求書作成・送受信システム「SALESGRAM請求」の開発
             </Text>
             <Center mt='1'>
-              <HStack spacing='2' >
-                {skillsSalesGram.map((skill) => (
-                  <Tag size='sm' key={skill} variant='solid' colorScheme='teal'>
-                    {skill}
-                  </Tag>
-                ))}
-              </HStack>
+              <SkillTags skills={skillsSalesGram} />
+            </Center>
+            <Text mt='2' fontSize='sm'>
+              社内システムair-logi・ecroboと連携用API「アドレスチェック」の開発・運用
+            </Text>
+            <Center mt='1'>
+              <SkillTags skills={skillsNgWordCheckAndAddressCheck} />
             </Center>
             <Text mt='2' fontSize='sm'>
               社内向けアプリ「NGワードチェック」の開発・運用
             </Text>
             <Center mt='1'>
-              <HStack spacing={4}>
-                {skillsNgWordCheck.map((skill) => (
-                  <Tag size='sm' key={skill} variant='solid' colorScheme='teal'>
-                    {skill}
-                  </Tag>
-                ))}
-              </HStack>
+              <SkillTags skills={skillsNgWordCheckAndAddressCheck} />
             </Center>
           </Box>
         </Stack>
