@@ -1,5 +1,5 @@
 import { Image, Text, Link, Center, Circle } from '@chakra-ui/react';
-import CustomIcon from './Items/CustomIcon'
+import CustomIcon from '../Items/CustomIcon'
 import { css } from "@emotion/react"
 
 export const About = () => {

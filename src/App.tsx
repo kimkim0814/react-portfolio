@@ -6,9 +6,9 @@ import {
   theme,
 } from "@chakra-ui/react"
 import { css } from "@emotion/react"
-import { About } from "./components/About"
-import { Skills } from "./components/Skills"
-import { Works } from "./components/Works"
+import { About } from "./components/pages/About"
+import { Skills } from "./components/pages/Skills"
+import { Works } from "./components/pages/Works"
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 
 const pathname = location.pathname;
